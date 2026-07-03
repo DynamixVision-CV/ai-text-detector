@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  ai-text-detector:
+    build: ./backend
+    container_name: ai-text-detector
+    ports:
+      - "8000:8000"
+    environment:
+      - PERPLEXITY_MODEL=distilgpt2
+    restart: unless-stopped
